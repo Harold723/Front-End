@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+        <td><button [routerLink]="'/Sistema/empleados/registrar-empleado'"
+                class="btn btn-outline-warning">NUEVO</button></td>
+
+    </ul>
+</nav>
+<h2>LISTA DE RESERVAS</h2>
+
+<table class="table table-striped">
+    <thead class="table-info">
+        <tr class="text-center">
+            <th scope="col">ID</th>
+            <th scope="col">Clase Vuelo</th>
+            <th scope="col">Asiento</th>
+            <th scope="col">Pasajero</th>
+            <th scope="col">Vuelo</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="text-center"></tr>
+        <tr *ngFor="let Reserva of Reserva">
+            <td>{{Reserva.id}}</td>
+            <td>{{Reserva.clase_vuelo}}</td>
+            <td>{{Reserva.asiento}}</td>
+            <td>{{Reserva.fk_id_pasajero?.id_pasajero}}</td>
+            <td>{{Reserva.fk_id_vuelo?.id}}</td>
+
+            <td> <button class="btn btn-info">Editar</button></td>
+            <td><button class="btn btn-danger" style="margin-left : 10px">Eliminar</button></td>
+
+
+
+        </tr>
+    </tbody>
+</table>
